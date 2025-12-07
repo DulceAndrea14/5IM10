@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Invitación 5IM10</title>
+    <link rel="icon" href="https://i.ibb.co/PGNwGh9f/Ico.jpg" type="image/jpeg">
+    <link rel="shortcut icon" href="https://i.ibb.co/7Ng53Dn3/imagen-2025-12-05-221314963.jpg" type="image/x-icon">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Montserrat:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <style>
+        /* Definición de Variables de Color y Tipografía */
+        :root {
+            --color-primary: #550000; /* Guinda aún más Oscuro */
+            --color-text: #333;
+            --color-light: #f7f7f7; 
+            --color-white: #ffffff;
+            --font-display: 'Playfair Display', serif;
+            --font-text: 'Montserrat', sans-serif;
+        }
+
+        /* Estilos Generales */
+        body {
+            font-family: var(--font-text);
+            color: var(--color-text);
+            margin: 0;
+            padding: 0;
+            background-color: var(--color-light); 
+            text-align: center;
+        }
+
+        h1, h2, h3 {
+            font-family: var(--font-display); 
+            font-weight: 700;
+            color: var(--color-primary); 
+        }
+
+        /* Estilo para las SECCIONES */
+        section {
+            padding: 60px 20px;
+            border-bottom: 1px solid #eee; 
+        }
+
+        /* 1. SECCIÓN DE BANNER Y CONTADOR */
+        #hero-banner {
+            background-image: url('https://i.ibb.co/1t6ss5FB/imagen-2025-12-03-013733341.png'); 
+            background-size: cover; 
+            background-repeat: no-repeat; 
+            background-position: center;
+            padding: 1; 
+            color: var(--color-white);
+            position: relative;
+            background-color: #fcebeb;
+            min-height: 65vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Capa Guinda Clarificada (Opacidad AUMENTADA) */
+        #hero-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-color: rgba(85, 0, 0, 0.4); 
+            z-index: 1;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            width: 100%; 
+            max-width: 800px;
+            padding: 20px; 
+        }
+
+        .hero-content h2 {
+            color: var(--color-white); 
+            margin-bottom: 5px;
+            font-family: "Times New Roman MT", "Times New Roman", serif;
+        }
+        
+        .hero-content h2:first-child {
+            font-size: 3em; 
+        }
+        
+        .hero-content h2:nth-child(2) {
+            font-size: 2.2em; 
+        }
+
+        /* Estilos del Contador */
+        .countdown {
+            display: flex;
+            justify-content: center;
+            gap: 15px; 
+            margin-top: 30px;
+        }
+
+        .countdown-item {
+            background-color: rgba(85, 0, 0, 0.6); 
+            padding: 10px 15px;
+            border-radius: 5px;
+            min-width: 60px; 
+            border: 1px solid rgba(255, 255, 255, 0.5); 
+        }
+
+        .countdown-item .number {
+            font-size: 2em; 
+            font-weight: 700;
+            display: block;
+            color: var(--color-white);
+        }
+        
+        .countdown-item .label {
+            font-size: 0.7em;
+            text-transform: uppercase;
+        }
+        
+        /* 2. SECCIÓN PRINCIPAL DE INVITACIÓN */
+        #main-invitation {
+            background-color: var(--color-white);
+            padding: 40px 20px;
+        }
+        
+        .invitation-container {
+            display: flex; 
+            justify-content: center; 
+            align-items: stretch; 
+            gap: 20px; 
+            max-width: 850px; 
+            margin: 0 auto;
+            flex-wrap: wrap; 
+        }
+
+        .invitation-box {
+            flex: 1; 
+            max-width: 400px; 
+            width: 100%;
+            margin: 0; 
+            border: 1px solid rgba(85, 0, 0, 0.5); 
+            padding: 30px 20px;
+        }
+
+        .invitation-box h1 {
+            font-size: 2.5em;
+            text-transform: uppercase;
+            margin-top: 0;
+        }
+
+        .invitation-box strong {
+            display: block;
+            font-weight: 700;
+            color: var(--color-primary); 
+            margin: 15px 0 5px 0;
+            text-transform: uppercase;
+        }
+
+        .invitation-text {
+            font-family: var(--font-display);
+            font-size: 1.1em;
+            margin-bottom: 30px;
+            color: #555;
+            text-align: center; 
+        }
+
+        .burro-companion-box {
+            max-width: 400px;
+            width: 100%;
+            border-radius: 0; 
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .burro-companion-box img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+        
+        /* 3. SECCIÓN DE RECUADROS */
+        #featured-cards {
+            background-color: var(--color-light);
+            padding: 60px 20px;
+            border-bottom: 1px solid #eee; 
+        }
+        
+        .card-grid {
+            display: grid;
+            /* Define una cuadrícula con auto-ajuste y un mínimo de 280px para cada columna (max 3 columnas) */
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); 
+            gap: 30px;
+            max-width: 1000px;
+            margin: 30px auto 0 auto;
+            justify-content: center;
+        }
+
+        /* Estilo general para las tarjetas */
+        .feature-card {
+            background-color: var(--color-white);
+            border: 1px solid rgba(85, 0, 0, 0.3); 
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            min-height: 250px; 
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+        
+        /* ***** CAMBIO PARA HACER EL ÚLTIMO RECUADRO MÁS ANCHO Y MÁS CORTO ***** */
+        .card-grid .feature-card:last-child {
+            /* Ocupa 3 columnas completas, estirándose a todo el ancho disponible */
+            grid-column: span 3; 
+            /* Menos padding vertical para que sea más corto */
+            padding: 15px 25px; 
+            /* Altura se ajusta automáticamente al contenido */
+            min-height: auto; 
+        }
+        /* ************************************************************************* */
+        
+        /* Contenedor de imagen en las tarjetas (NO APLICA A LA ÚLTIMA TARJETA) */
+        .card-image-placeholder {
+            width: 100%;
+            height: 150px;
+            background-color: #f0f0f0;
+            margin: 15px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #aaa;
+            border-radius: 4px;
+            overflow: hidden; 
+        }
+        
+        /* Párrafos de las tarjetas */
+        .feature-card p {
+            text-align: justify; 
+            flex-grow: 1; 
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        /* Ajuste específico para el párrafo de la última tarjeta (centrado) */
+        .card-grid .feature-card:last-child p {
+            text-align: center;
+            margin-top: 10px; 
+            margin-bottom: 5px; 
+            padding: 10px 0; 
+        }
+        
+        /* AJUSTE para que las imágenes de las tarjetas cubran el recuadro */
+        .card-image-placeholder img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+        }
+
+        /* 5. SECCIÓN UBICACIÓN Y MAPA */
+        #location {
+            background-color: var(--color-white);
+        }
+        
+        .map-image-container {
+            display: flex;
+            justify-content: center; 
+            gap: 20px; 
+            max-width: 900px; 
+            margin: 20px auto;
+            flex-wrap: wrap; 
+        }
+
+        #location iframe {
+            display: block;
+            width: 100%; 
+            max-width: 600px; 
+            height: 450px; 
+            border: 1px solid rgba(85, 0, 0, 0.3); 
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .school-image-box {
+            width: 100%; 
+            max-width: 250px; 
+            height: 450px; 
+            overflow: hidden;
+            border: 1px solid rgba(85, 0, 0, 0.3); 
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .school-image-box img {
+            width: 100%;
+            height: 100%; 
+            object-fit: cover; 
+            border-radius: 8px;
+            max-width: 100%; 
+            max-height: 100%;
+        }
+        
+        /* 6. PIE DE PÁGINA GUINDA */
+        #footer-info {
+            background-color: var(--color-primary); 
+            color: var(--color-white);
+            padding: 40px 20px 50px 20px; 
+            text-align: center;
+        }
+        
+        .footer-content {
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; 
+            max-width: 1000px;
+            margin: 0 auto 20px auto; 
+            gap: 40px;
+            text-align: left; 
+            flex-wrap: wrap;
+        }
+
+        .footer-details {
+            flex-grow: 1; 
+            min-width: 300px;
+        }
+
+        .footer-details p {
+            margin: 5px 0;
+            font-size: 1.1em; 
+        }
+
+        /* ESTILO PARA LOS LOGOS INLINE */
+        .inline-logo {
+            height: 1em; 
+            margin-right: 5px;
+            vertical-align: middle; 
+            filter: invert(100%); 
+        }
+        
+        .donkey-image-box {
+            max-width: 250px; 
+            height: auto;
+            display: block; 
+            margin: 0 auto;
+        }
+        
+        .lema-ipn {
+            font-family: var(--font-text); 
+            font-size: 1.1em; 
+            font-weight: 400;
+            color: var(--color-white); 
+            margin-top: 15px; 
+        }
+        
+        .donkey-image-box img {
+            width: 100%; 
+            height: auto;
+            display: block;
+        }
+        
+
+        /* Media Query para móvil (máx 870px de ancho) */
+        @media (max-width: 870px) { 
+            .invitation-container {
+                flex-direction: column; 
+                max-width: 450px;
+            }
+            .burro-companion-box {
+                height: 250px; 
+            }
+            
+            .school-image-box {
+                max-width: 100%; 
+                width: 100%;
+                height: 300px; 
+                margin-top: 20px; 
+            }
+            #location iframe {
+                height: 300px; 
+            }
+            .footer-content {
+                text-align: center; 
+            }
+            .donkey-image-box {
+                order: -1; 
+                margin-bottom: 20px;
+                margin-left: 0;
+                max-width: 200px; 
+            }
+            .footer-details {
+                min-width: 100%; 
+            }
+            
+            /* En móvil, la tarjeta de la aplicación vuelve a su tamaño normal (1 columna) */
+            .card-grid .feature-card:last-child {
+                grid-column: span 1; 
+                min-height: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <section id="hero-banner">
+        <div class="hero-content">
+            <h2>¿Lo hiciste tu o la IA?</h2>
+            
+            <h2>Inteligencia detectando inteligencia</h2>
+            
+            <div class="countdown">
+                <div class="countdown-item">
+                    <span class="number" id="countdown-days">0</span>
+                    <span class="label">Días</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="countdown-hours">0</span>
+                    <span class="label">Horas</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="countdown-minutes">0</span>
+                    <span class="label">Minutos</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="number" id="countdown-seconds">0</span>
+                    <span class="label">Segundos</span>
+                </div>
+            </div>
+            <p style="margin-top: 10px; color: #fff;" id="countdown-status">¡PREPÁRATE PARA EL PROYECTO!</p>
+            
+        </div>
+    </section>
+
+    <section id="main-invitation">
+        <div class="invitation-container">
+            <div class="invitation-box">
+                <p class="invitation-text">El grupo 5IM10 te invita a la presentación de nuestro proyecto aula</p>
+                
+                <h1>PROYECTO AULA</h1>
+                
+                <p>
+                    <strong>FECHA</strong>
+                    Miércoles, 10 de diciembre del 2025
+                </p>
+                <p>
+                    <strong>HORA</strong>
+                    9:00 hrs.
+                </p>
+                <p>
+                    <strong>LUGAR</strong>
+                    Auditorio de la unidad académica
+                </p>
+                
+            </div>
+            
+            <div class="burro-companion-box">
+                <img src="https://i.ibb.co/jZP8RL79/Gemini-Generated-Image-fgpfycfgpfycfgpf.png" alt="Mascota Burro IPN de acompañamiento">
+            </div>
+        </div>
+    </section>
+
+    <section id="featured-cards">
+        <h2>Aspectos fundamentales</h2>
+        <div class="card-grid">
+            
+            <div class="feature-card">
+                <h3>¿Lo hiciste tú o la IA?</h3>
+                <p>Programación de dispositivos  móviles.</p> 
+                <div class="card-image-placeholder">
+                    <img src="https://i.ibb.co/Vcrv7RWD/Gemini-Generated-Image-mhi5dtmhi5dtmhi5-2.png" alt="Burro con cerebro de IA">
+                </div>
+                <p class="card-docente" style="text-align: center;">
+                    Proyecto a cargo de la docente: <br>
+                    Dra. Virginia González Castro
+                </p>
+            </div>
+            
+            <div class="feature-card">
+                <h3>Sede del proyecto</h3>
+                <p>El proyecto se llevará a cabo en el auditorio de la unidad académica.</p>
+                <div class="card-image-placeholder">
+                    <img src="https://i.ibb.co/JR7FZ3Fd/imagen-2025-12-02-194128313.png" alt="Imagen del Auditorio de la Escuela">
+                </div>
+            </div>
+            
+            <div class="feature-card">
+                <h3>¡Sorteos y sorpresas!</h3>
+                <p>
+                    Habrá sorteos, desde dulces, hasta unos increíbles audífonos bluetooth. 
+                    Para poder participar es necesario instalar la aplicación y listo, estarás dentro de los posibles ganadores.
+                </p>
+                <div class="card-image-placeholder">
+                    <img src="https://i.ibb.co/G3MF0jcH/imagen-2025-12-02-225427089.png" alt="Imagen de Sorteo y Premios">
+                </div>
+            </div>
+            
+            <div class="feature-card"> 
+                <h3>¿Cómo obtener la aplicación</h3>
+                <p style="text-align: center;">
+                    El QR de la aplicación podrás encontrarlo en los pasillos de la escuela y en la entrada del auditorio.
+                </p>
+            </div>
+            </div>
+    </section>
+
+    <section id="location">
+        <h2>Ubicación</h2>
+        <p>Localiza las instalaciones de nuestra escuela</p>
+        
+        <div class="map-image-container">
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3762.5673611822544!2d-99.15298702623276!3d19.431090340731927!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1ff2b6e0540e3%3A0x73e89933939aab17!2sCentro%20de%20Estudios%20Cient%C3%ADficos%20y%20Tecnol%C3%B3gicos%20N%C2%B0%205%20%22Benito%20Ju%C3%A1rez%22%20IPN!5e0!3m2!1ses!2smx!4v1764724686107!5m2!1ses!2smx" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+
+            <div class="school-image-box">
+                <img src="https://i.ibb.co/Kj2BP2y7/imagen-2025-12-05-194732831.png" alt="Imagen de la Escuela">
+            </div>
+        </div>
+
+        <a href='https://www.google.com/maps/place/Centro+de+Estudios+Científicos+y+Tecnológicos+N°+5+"Benito+Juárez"+IPN/@19.4310903,-99.152987,17z/data=!3m1!4b1!4m6!3m5!1s0x85d1ff2b6e0540e3:0x73e89933939aab17!8m2!3d19.4310853!4d-99.1504121!16s%2Fg%2F11bwf3d0p3?entry=ttu&g_ep=EgoyMDI1MTEzMC4wIKXMDSoASAFQAw%3D%3D' style="color: var(--color-primary); display: block; margin-top: 10px;">Abrir en Google Maps</a>
+    </section>
+    
+    <section id="footer-info">
+        <div class="footer-content">
+            <div class="footer-details">
+                <h3>¡Te Esperamos!</h3>
+                <p><strong>Grupo:</strong> 5IM10</p>
+                <p><strong>Salón:</strong> 110</p>
+                <p><strong>Fecha:</strong> 10/12/2025</p>
+                
+                <p>
+                    Instituto Politécnico Nacional
+                    <img src="https://i.ibb.co/8gVShhzy/Logo-IPN.webp" alt="Logo IPN" class="inline-logo">
+                </p>
+                <p>
+                    Centro de Estudios Científicos y Tecnológicos N° 5 "Benito Juárez" IPN
+                    <img src="https://i.ibb.co/XZSD220M/Logo-del-CECy-T5.gif" alt="Logo CECyT 5" class="inline-logo">
+                </p>
+            </div>
+            
+            <div class="donkey-image-box">
+                <img src="https://i.ibb.co/nNtwFXVG/burrosentado.png" alt="Mascota Burro Sentado del IPN">
+            </div>
+        </div>
+        
+        <p class="lema-ipn">"La técnica al servicio de la patria"</p>
+        
+    </section>
+
+    <script>
+        // Establece la fecha y hora del evento: 10 de diciembre de 2025 a las 9:00 hrs.
+        const targetDate = new Date("2025-12-10T09:00:00").getTime();
+
+        // Actualiza el contador cada 1 segundo (1000 milisegundos)
+        const countdownFunction = setInterval(function() {
+
+            const now = new Date().getTime();
+            let distance = targetDate - now;
+
+            // Cálculos de tiempo para días, horas, minutos y SEGUNDOS
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000); 
+
+            // Muestra el resultado en los elementos HTML correspondientes
+            document.getElementById("countdown-days").innerHTML = days;
+            document.getElementById("countdown-hours").innerHTML = hours;
+            document.getElementById("countdown-minutes").innerHTML = minutes;
+            document.getElementById("countdown-seconds").innerHTML = seconds; 
+
+            // Si la cuenta regresiva termina (la distancia es menor a 0)
+            if (distance < 0) {
+                clearInterval(countdownFunction); 
+                document.getElementById("countdown-days").innerHTML = "0";
+                document.getElementById("countdown-hours").innerHTML = "0";
+                document.getElementById("countdown-minutes").innerHTML = "0";
+                document.getElementById("countdown-seconds").innerHTML = "0";
+                document.getElementById("countdown-status").innerHTML = "¡EL EVENTO HA COMENZADO! ¡BIENVENIDOS!";
+            }
+        }, 1000);
+    </script>
+
+</body>
+</html>
